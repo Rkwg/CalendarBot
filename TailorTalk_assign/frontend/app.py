@@ -9,7 +9,7 @@ if "messages" not in st.session_state:
 user_input = st.chat_input("Ask to book a meeting...")
 
 if user_input:
-    response = requests.post("http://localhost:8000/message", json={"text": user_input})
+    response = requests.post("https://calendarbot-1660.onrender.com/message", json={"text": user_input})
     # bot_reply = response.json()["reply"]
     try:
         json_data = response.json()
