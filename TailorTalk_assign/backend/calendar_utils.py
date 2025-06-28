@@ -6,10 +6,10 @@ import base64
 from urllib.parse import quote
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-SERVICE_ACCOUNT_FILE = 'service_account.json'
+SERVICE_ACCOUNT_INFO = json.loads(os.environ["SERVICE_ACCOUNT_INFO"])
 
 credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    SERVICE_ACCOUNT_INFO, scopes=SCOPES)
 service = build('calendar', 'v3', credentials=credentials)
 CALENDAR_ID = "1aded8a9867b975352ac1ae4460eef71699c173034659d3faf34b2c577698966@group.calendar.google.com"
 
