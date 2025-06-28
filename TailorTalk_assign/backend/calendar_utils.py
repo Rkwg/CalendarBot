@@ -5,6 +5,7 @@ from googleapiclient.discovery import build
 import base64
 from urllib.parse import quote
 import json
+import os
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 SERVICE_ACCOUNT_INFO = json.loads(os.environ["SERVICE_ACCOUNT_INFO"])
